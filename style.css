@@ -1,25 +1,138 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+/* Impostazioni di base */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Barra di navigazione */
 header {
-    background-color: #4CAF50;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav .logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Carosello delle notizie */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.notizia {
+    flex: 0 0 100%; /* Ogni notizia occupa il 100% della larghezza */
+    background-color: #fff;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    color: white;
 }
 
-main {
-    padding: 20px;
+.notizia h2 {
+    font-size: 24px;
+    color: #333;
 }
 
+.notizia .data {
+    font-size: 14px;
+    color: #888;
+    margin: 10px 0;
+}
+
+.notizia p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.notizia a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #f4a261;
+    text-decoration: none;
+}
+
+.notizia a:hover {
+    text-decoration: underline;
+}
+
+/* Pulsanti per il carosello */
+button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
+    margin-top: 40px;
 }
