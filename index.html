@@ -3,74 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notizie del Giorno</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Le nostre notizie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #005b8e;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #004a7c;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 25px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        /* Layout Styles */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 30px 10%;
+            gap: 30px;
+        }
+
+        .main-content {
+            flex: 3;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #e1f0f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item {
+            background-color: #fff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item h2 {
+            font-size: 2rem;
+            color: #003c76;
+            margin-bottom: 20px;
+        }
+
+        .news-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .news-item p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .news-item i {
+            font-size: 1rem;
+            color: #888;
+        }
+
+        .news-item a {
+            color: #005b8e;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .news-item a:hover {
+            color: #ffd700;
+        }
+
+        /* Sidebar Styles */
+        .sidebar h3 {
+            font-size: 1.5rem;
+            color: #003c76;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            color: #005b8e;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #005b8e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 5%;
+            }
+
+            .main-content {
+                flex: 1;
+            }
+
+            .sidebar {
+                flex: 1;
+                margin-top: 30px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+                margin: 0 15px;
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Barra di Navigazione -->
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">Notizie Oggi</a>
-            </div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Politica</a></li>
-                <li><a href="#">Economia</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Tecnologia</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Sezione Carosello delle notizie -->
-    <main>
-        <section class="carousel-container">
-            <div class="carousel">
-                <!-- Notizia 1 -->
-                <div class="notizia">
-                    <h2>Il mercato azionario ha visto una crescita significativa oggi</h2>
-                    <p class="data">28 Febbraio 2025 | Economia</p>
-                    <p>Oggi, i mercati azionari hanno registrato una crescita del 3%, spinta da notizie positive sulle performance delle grandi aziende...</p>
-                    <a href="https://colorlib.com/wp/themes/dazzling/">Leggi di più</a>
-                </div>
+<header>
+    <h1>Le nostre notizie</h1>
+    <p>Le ultime novità da tutto il mondo</p>
+</header>
 
-                <!-- Notizia 2 -->
-                <div class="notizia">
-                    <h2>Il governo italiano approva nuove riforme fiscali</h2>
-                    <p class="data">28 Febbraio 2025 | Politica</p>
-                    <p>Il governo italiano ha annunciato nuove riforme fiscali per incentivare la crescita e la competitività del paese...</p>
-                    <a href="notizia1.html">Leggi di più</a>
-                </div>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Politica</a>
+    <a href="#">Economia</a>
+    <a href="#">Tecnologia</a>
+</nav>
 
-                <!-- Notizia 3 -->
-                <div class="notizia">
-                    <h2>La Juventus vince la partita di stasera contro il Milan</h2>
-                    <p class="data">28 Febbraio 2025 | Sport</p>
-                    <p>In una partita emozionante, la Juventus ha battuto il Milan con un punteggio di 3-1...</p>
-                    <a href="#">Leggi di più</a>
-                </div>
+<div class="container">
+    <div class="main-content">
+        <div class="news-item">
+            <h2>Rapporti e trattative tra USA e Ucraina</h2>
+            <img src="trump.webp" alt="Trump e Zelensky">
+            <p>L'USA ha fornito all'Ucraina un totale di 120 miliardi nel corso di tutta la guerra e l'Unione Europea 115. Trump ha però solo di recente cominciato a scontrarsi con Zelensky per chiedere i soldi che ha speso... <a href="https://truthsocial.com/@realDonaldTrump/posts/114031332924234939">Leggi di più</a></p>
+            <i>Fonti: Giornale del resto del carlino, <a href="https://truthsocial.com/@realDonaldTrump/posts/114031332924234939">Post di Trump</a>, <a href="https://www.eunews.it/2025/02/19/trump-zelensky-dittatore-accuse-ue/">Ansa</a>.</i>
+        </div>
 
-                <!-- Notizia 4 -->
-                <div class="notizia">
-                    <h2>La tecnologia dei veicoli elettrici continua a evolversi</h2>
-                    <p class="data">28 Febbraio 2025 | Tecnologia</p>
-                    <p>I veicoli elettrici stanno guadagnando sempre più terreno, grazie a innovazioni nella durata delle batterie e nel design...</p>
-                    <a href="#">Leggi di più</a>
-                </div>
-            </div>
+        <div class="news-item">
+            <h2>Atti di vandalismo al campo universitario di Cesena</h2>
+            <img src="università.jpg" alt="Università di Cesena">
+            <p>Nella notte tra martedì e mercoledì, un gruppo di no vax ha imbrattato porte e muri esterni del campo universitario UNIBO di Cesena. Con bombolette spray di colore rosso acceso sono state scritte frasi contro il vaccino... <a href="https://www.cesenatoday.it/video/vandali-no-vax-cesena-campus-video.html">Leggi di più</a></p>
+            <i>Fonti: Giornale del resto del carlino, <a href="https://www.cesenatoday.it/video/vandali-no-vax-cesena-campus-video.html">Video</a>, <a href="https://www.cesenatoday.it/cronaca/raid-vandalico-campus-universitario-cesena-oggi.html">Cesena Today</a>.</i>
+        </div>
 
-            <!-- Pulsanti di navigazione -->
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-        </section>
-    </main>
+        <div class="news-item">
+            <h2>La salute del papa</h2>
+            <img src="papa.jpeg" alt="Papa Francesco">
+            <p>Il papa è ormai malato da circa 3 settimane, avendo avuto il primo ricovero in ospedale il 14 febbraio. Nonostante questo, le notizie hanno cominciato a venire fuori solo di recente... <a href="https://www.quotidiano.net/cronaca/papa-francesco-corvi-vaticano-x46p3sdi">Leggi di più</a></p>
+            <i>Fonti: Giornale del resto del carlino, <a href="https://www.quotidiano.net/cronaca/papa-francesco-corvi-vaticano-x46p3sdi">Resto del Carlino</a>, <a href="https://www.vaticannews.va/it/papa/news/2025-02/notte-tranquilla-per-il-papa-al-gemelli.html">Vatican News</a>.</i>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Notizie Oggi. Tutti i diritti riservati.</p>
-    </footer>
+    <div class="sidebar">
+        <h3>Notizie Popolari</h3>
+        <ul>
+            <li><a href="#">Tecnologia e innovazione</a></li>
+            <li><a href="#">Politica internazionale</a></li>
+            <li><a href="#">Sport e cultura</a></li>
+            <li><a href="#">Economia globale</a></li>
+        </ul>
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<footer>
+    <p>&copy; 2025 Le nostre notizie. Tutti i diritti riservati.</p>
+</footer>
+
 </body>
 </html>
